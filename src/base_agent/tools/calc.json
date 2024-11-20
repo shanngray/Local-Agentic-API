@@ -1,0 +1,20 @@
+{
+    "type": "function",
+    "function": {
+        "name": "calc",
+        "description": "Perform basic arithmetic calculations",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "a": {"type": "number", "description": "First number"},
+                "b": {"type": "number", "description": "Second number"},
+                "calc_type": {
+                    "type": "string",
+                    "enum": ["add", "sub", "mul", "div"],
+                    "description": "Type of calculation to perform"
+                }
+            },
+            "required": ["a", "b", "calc_type"]
+        }
+    }
+}

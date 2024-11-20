@@ -1,0 +1,21 @@
+{
+    "type": "function",
+    "function": {
+        "name": "new_blog",
+        "description": "Create a new blog post markdown file in the blogs directory",
+        "parameters": {
+            "type": "object",
+            "required": ["filename", "contents"],
+            "properties": {
+                "filename": {
+                    "type": "string",
+                    "description": "Name of the blog file to create (must be valid filename)"
+                },
+                "contents": {
+                    "type": "string",
+                    "description": "Markdown contents of the blog post"
+                }
+            }
+        }
+    }
+}

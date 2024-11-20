@@ -1,0 +1,21 @@
+{
+    "type": "function",
+    "function": {
+        "name": "edit_blog",
+        "description": "Edit an existing blog post markdown file",
+        "parameters": {
+            "type": "object",
+            "required": ["filename", "contents"],
+            "properties": {
+                "filename": {
+                    "type": "string",
+                    "description": "Name of the blog file to edit"
+                },
+                "contents": {
+                    "type": "string",
+                    "description": "New markdown contents for the blog post"
+                }
+            }
+        }
+    }
+}

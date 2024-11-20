@@ -1,0 +1,14 @@
+{
+    "type": "function",
+    "function": {
+        "name": "get_current_time",
+        "description": "Get the current time",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "timezone": {"type": "string", "description": "(Optional)Timezone to get the current time in (e.g. 'America/New_York')"}
+            },
+            "required": []
+        }
+    }
+}

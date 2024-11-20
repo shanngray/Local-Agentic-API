@@ -1,0 +1,17 @@
+{
+    "type": "function",
+    "function": {
+        "name": "read_blog",
+        "description": "Read a blog post markdown file",
+        "parameters": {
+            "type": "object",
+            "required": ["filename"],
+            "properties": {
+                "filename": {
+                    "type": "string",
+                    "description": "Name of the blog file to read"
+                }
+            }
+        }
+    }
+}

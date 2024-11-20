@@ -1,0 +1,12 @@
+{
+    "type": "function",
+    "function": {
+        "name": "list_agents",
+        "description": "Use this tool to list all agents registered in the directory service.",
+        "parameters": {
+            "type": "object",
+            "properties": {}
+        },
+        "required": []
+    }
+}

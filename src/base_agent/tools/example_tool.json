@@ -1,0 +1,47 @@
+{
+    "type": "function",
+    "function": {
+      "name": "example_function",
+      "description": "A clear description of what this function does",
+      "parameters": {
+        "type": "object",
+        "required": ["required_parameter"],
+        "properties": {
+          "required_parameter": {
+            "type": "string",
+            "description": "Description of this required parameter"
+          },
+          "optional_parameter": {
+            "type": "number",
+            "description": "Description of this optional parameter",
+            "minimum": 0,
+            "maximum": 100
+          },
+          "enum_parameter": {
+            "type": "string",
+            "enum": ["option1", "option2", "option3"],
+            "description": "Parameter that must be one of the specified values"
+          },
+          "array_parameter": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "An array of strings",
+            "minItems": 1,
+            "maxItems": 5
+          },
+          "nested_object_parameter": {
+            "type": "object",
+            "properties": {
+              "nested_property": {
+                "type": "string",
+                "description": "A property within a nested object"
+              }
+            },
+            "description": "A nested object parameter"
+          }
+        }
+      }
+    }
+  }

@@ -1,0 +1,17 @@
+{
+    "type": "function",
+    "function": {
+        "name": "agent_search",
+        "description": "Use this tool to find other agents that specialize in specific areas. After finding a suitable agent, you can send them messages to get the information you need.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "task_description": {
+                    "type": "string",
+                    "description": "Description of the task you need help with"
+                }
+            },
+            "required": ["agent_description"]
+        }
+    }
+}
