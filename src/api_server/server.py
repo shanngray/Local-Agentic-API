@@ -49,15 +49,39 @@ async def lifespan(app: FastAPI):
 
 async def start_directory_service():
     """Start the agent directory service."""
-    app = FastAPI(lifespan=lifespan)
+    app = FastAPI(
+        title="Agent Directory Service API",
+        description="""
+        A distributed architecture for AI agents to communicate and interact with each other.
+        The system provides agent registration, message routing, and system-wide operations.
+        """,
+        version="1.0.0",
+        docs_url="/docs",
+        redoc_url="/redoc"
+    )
     directory_service = AgentDirectoryService()
     
     # Get log level from environment or default to INFO
     server_log_level = os.getenv("SERVER_LOG_LEVEL", "INFO").upper()
     
     # Register routes
-    @app.post("/agent/register")
+    @app.post("/agent/register", 
+        response_model=AgentResponse,
+        summary="Register a new agent",
+        description="Register a new agent with the directory service with its capabilities and endpoint information",
+        response_description="Returns success status and confirmation message"
+    )
     async def register_agent(agent: AgentDirectory):
+        """
+        Register a new agent with the following information:
+        
+        - **name**: Unique identifier for the agent
+        - **address**: Host address where agent is running
+        - **port**: Port number for agent's API
+        - **agent_type**: Type of agent (e.g., "specialized")
+        - **description**: Brief description of agent's capabilities
+        - **tools**: List of available tools
+        """
         log_event(logger, "directory.agent_registered", f"Registering agent: {agent.name}")
         directory_service.register_agent(agent)
         return AgentResponse(success=True, message=f"Agent {agent.name} registered")
